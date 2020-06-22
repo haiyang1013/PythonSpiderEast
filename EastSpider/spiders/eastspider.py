@@ -23,10 +23,10 @@ class eastspider(scrapy.spiders.CrawlSpider):
         price_final = response.xpath("//span[@class='ProductPrice-final']/text()").extract_first()
         price_original = response.xpath("//span[@class='ProductPrice-original']/text()").extract_first()
         color = response.xpath("//p[@class='ProductDetails-form__label']/text()").extract_first()
-        size = response.xpath("//div[@class='ProductSize']/input/@value").extract_first()
+        size = response.xpath("//div[@class='ProductSize']/label/span/text()").extract()
         sku = response.xpath("//div[@id='ProductDetails-tabs-details-panel']/text()").extract()
-        details = response.xpath("//div[@class='ProductDetails-description']/text()").extract_first()
-        img_urls = response.xpath("//span[@class='c-image product']/img/@src").extract()
+        details = response.xpath("//div[@class='ProductDetails-description']").extract()
+        img_urls = response.xpath("//span[@class='c-image--square']/span/img/@src").extract()
 
         item['title'] = title
         item['price_final'] = price_final
