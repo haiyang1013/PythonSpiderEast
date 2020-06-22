@@ -26,7 +26,7 @@ class eastspider(scrapy.spiders.CrawlSpider):
         size = response.xpath("//div[@class='ProductSize']/label/span/text()").extract()
         sku = response.xpath("//div[@id='ProductDetails-tabs-details-panel']/text()").extract()
         details = response.xpath("//div[@class='ProductDetails-description']").extract()
-        img_urls = response.xpath("//span[@class='c-image--square']/span/img/@src").extract()
+        img_urls = response.xpath("//span[@class='product']/span/img/@src").extract()
 
         item['title'] = title
         item['price_final'] = price_final
