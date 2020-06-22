@@ -1,5 +1,3 @@
-# PythonSpiderEast
-用Python通过 scrapy 实现网页信息爬取和采集。
 windows环境，已安装Python-38
 1.升级python pip :
 python -m pip install --upgrade pip
@@ -38,3 +36,6 @@ ROBOTSTXT_OBEY = False
 USER_AGENT = 'EastSpider (+https://www.eastbay.com)'
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
 3.多个网页爬取，spider需继承
+scrapy.spiders.CrawlSpider
+
+
