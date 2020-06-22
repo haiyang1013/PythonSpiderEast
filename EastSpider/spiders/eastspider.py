@@ -17,7 +17,7 @@ class eastspider(scrapy.spiders.CrawlSpider):
     def parseContent(self, response):
         print("----------已爬取成功--------------")
         print(response.url)
-        # 创建item字段对象，用来存储信息
+        # 创建item字段对象， 用来存储信息
         item = EastspiderItem()
         title = response.xpath("//span[@class='ProductName-primary']/text()").extract_first()
         price_final = response.xpath("//span[@class='ProductPrice-final']/text()").extract_first()
